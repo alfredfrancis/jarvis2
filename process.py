@@ -13,8 +13,8 @@ data = pd.read_csv('datasets/data.csv')
 #print(data.head(3))
 
 #setting target value
-_l2 = data['bulb1']
-target = _l2.values
+_bulb2 = data['bulb2']
+target = _bulb2.values
 
 #setting features for prediction
 numerical_features = data[['light', 'time', 'motion']]
@@ -30,7 +30,7 @@ features_train, features_test, target_train, target_test = train_test_split(
 #performing logistic regression
 logreg = LogisticRegression(C=1)
 logreg.fit(features_train, target_train)
-#target_predicted = logreg.predict(features_test)
+target_predicted = logreg.predict(features_test)
 
 #printing accuracy score of the predicted result
-#print(accuracy_score(target_test, target_predicted))
+print(accuracy_score(target_test, target_predicted))
