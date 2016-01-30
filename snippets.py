@@ -31,3 +31,6 @@ And then later, on the prediction server:
 array([0])
 >>> y[0]
 0
+
+
+mongoimport -d test -c data_reading --type csv --file dataset/data.csv --headerline
